@@ -97,6 +97,14 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+html, body, #map{
+    height: 100%;
+    width: 100%;
+}
+
+#map {
+    z-index: 5;
+}
 
 #mapHeader {
     position: absolute;
@@ -109,10 +117,27 @@ textarea {
     z-index: 10;
 }
 
+#nav {
+    width: 100%;
+    float: left;
+    margin: 0 0 3em 0;
+    padding: 0;
+    list-style: none;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
 
+#nav li{
+    float:left;
+}
 
-
-
+#nav li a{
+    display: block;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #069;
+}
 
 
 
