@@ -7,7 +7,6 @@ var map = L.map('map',{
 })
 
 var spiderbee = L.tileLayer('https://api.mapbox.com/styles/v1/alinaalina/cjdf3zrd89h672spkz10c2j7b/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYWxpbmFhbGluYSIsImEiOiJjamRmM3c4M20wM2Q1MndvMHR5d3B3Z3JuIn0.gLm14to9IRdaLHdodrmdhg', {
-    attribution: "Thank you, Mapbox, and antja!",
     minZoom: 3,
     maxZoom: 14
 }).addTo(map);
