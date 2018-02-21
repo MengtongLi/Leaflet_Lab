@@ -97,18 +97,33 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-#map{
-    height: 600px;
-    width: 70%;
+
+#map {
+    height: 700px;
+    width: 75%;
     display: inline-block;
 }
 
+
+.sequence-control-container {
+    width: 350px;
+    height: 30px;
+    background-color: rgba(255,255,255,0.8);
+    padding: 10px;
+    line-height: 45px;
+    text-align: center;
+    border: solid gray 3px;
+}
+
+.range-slider {
+    width: 200px;
+}
 
 .leaflet-popup-content p{
     margin: 0.2em 0;
 }
 
-
+/*
 #panel {
     width: 26%;
     padding: 20px;
@@ -117,21 +132,19 @@ textarea {
     text-align: center;
     line-height: 42px;
 }
+*/
 
 #box {
-    width: 26%;
+    width: 20%;
     padding: 20px;
     display: inline-block;
     vertical-align: top;
     text-align: center;
     line-height: 20px;
-    
+    border: solid gray 3px;
+    background-color: lightblue;
 }
 
-
-.range-slider {
-    width: 50%;
-}
 
 #forward {
     float: right;
@@ -142,10 +155,22 @@ textarea {
 }
 
 
+.legend-control-container{
+    width: 200px;
+    height: 130px;
+    background-color: rgba(255,255,255,0.8);
+    padding: 30px;
+    line-height: 35px;
+    text-align: center;
+    border: solid gray 3px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+}
 
-
-
-
+#temporal-legend{
+    font-size: 14px;
+    padding: 6px 6px;
+    height: 30px;
+}
 
 
 /* ==========================================================================
