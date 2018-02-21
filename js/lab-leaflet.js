@@ -1,14 +1,26 @@
 function createMap(){
+
+    var outdoors = L.tileLayer('https://api.mapbox.com/styles/v1/alinaalina/cjdf495v05h9k2rp74jofvpcb/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYWxpbmFhbGluYSIsImEiOiJjamRmM3c4M20wM2Q1MndvMHR5d3B3Z3JuIn0.gLm14to9IRdaLHdodrmdhg', {
+        attribution: "Made by Alina"}),
+
+        vintage = L.tileLayer("https://api.mapbox.com/styles/v1/alinaalina/cjdf3zrd89h672spkz10c2j7b/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYWxpbmFhbGluYSIsImEiOiJjamRmM3c4M20wM2Q1MndvMHR5d3B3Z3JuIn0.gLm14to9IRdaLHdodrmdhg",{
+            attribution: "Made by Mengtong"});
+
     var map = L.map('map', {
         center: [20, 0],
-        zoom: 2
+        zoom: 2,
+        layers: [outdoors]
     });
 
-    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
-    }).addTo(map);
-
     getData(map);
+
+    var layers={
+        "Outdoors Style": outdoors,
+        "Ancient Style": vintage
+    };
+
+    L.control.layers(layers).addTo(map);
+
 };                                 //这个函数的目的是创建一个基本地图
 
 function getData(map){                                       //Import GeoJSON data
@@ -73,7 +85,7 @@ function pointToLayer(feature, latlng, attributes){             //function to co
             this.closePopup();
         },
         click: function(){
-            $("#box").html(popupContent);
+            $("#panel").html(popupContent);
         }
     });
     
@@ -140,8 +152,6 @@ function createSequenceControls(map, attributes) {
 
             $(container).append('<button class="skip" id="reverse" title="Reverse">Reverse</button>');
             $(container).append('<button class="skip" id="forward" title="Forward">Skip</button>');
-            $('#reverse').html('<img src="img/reverse.png">');
-            $('#forward').html('<img src="img/forward.png">');
 
             $(container).on('mousedown dblclick pointerdown', function(e){
                 L.DomEvent.stopPropagation(e);
